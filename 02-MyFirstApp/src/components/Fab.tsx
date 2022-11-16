@@ -1,5 +1,5 @@
 import React from 'react'
-import { TouchableOpacity, View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableNativeFeedback, Platform, TouchableOpacity } from 'react-native'
 
 interface Props {
     title: string
@@ -9,21 +9,41 @@ interface Props {
 
 export const Fab = ({ title, onPress, position = 'br' }: Props) => {
 
-
-
-    return (
-        <TouchableOpacity
-            onPress={onPress}
-            style={[
+    const ios = () => {
+        return (
+            <TouchableOpacity style={[
                 styles.fabLocation,
                 (position === 'bl') ? styles.left : styles.right
             ]}
-        >
-            <View style={styles.fab}>
-                <Text style={styles.fabText}>{title}</Text>
-            </View>
-        </TouchableOpacity>
-    )
+                onPress={onPress}
+                activeOpacity={0.5}>
+                <View style={styles.fab}>
+                    <Text style={styles.fabText}>{title}</Text>
+                </View>
+            </TouchableOpacity>
+        )
+    }
+
+    const android = () => {
+        return (
+            <View
+                style={
+                    [
+                        styles.fabLocation,
+                        (position === 'bl') ? styles.left : styles.right
+                    ]} >
+                <TouchableNativeFeedback
+                    onPress={onPress}
+                    background={TouchableNativeFeedback.Ripple('#28425B', false, 30)}
+                >
+                    <View style={styles.fab}>
+                        <Text style={styles.fabText}>{title}</Text>
+                    </View>
+                </TouchableNativeFeedback>
+            </View >
+        )
+    }
+    return (Platform.OS === 'ios') ? ios() : android()
 }
 
 const styles = StyleSheet.create({
@@ -31,7 +51,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 25,
     },
-
     left: {
         left: 25
     },
