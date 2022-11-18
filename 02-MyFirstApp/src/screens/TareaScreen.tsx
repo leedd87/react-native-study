@@ -14,28 +14,47 @@ export const TareaScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#28425B"
+        backgroundColor: "#28425B",
+        // justifyContent: 'center'
+        // justifyContent: 'space-between'
+        // flexDirection: 'row',
+        // justifyContent: 'space-between'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     cajaMorada: {
+        // flex: 2,
         width: 100,
         height: 100,
+        // height: 100,
         borderWidth: 10,
         borderColor: 'white',
-        backgroundColor: '#5856D6'
+        backgroundColor: '#5856D6',
+        // alignSelf: 'flex-end'
     },
     cajaNaranja: {
-        flex: 1,
+        // flex: 2,
+        // flex: 1,
         width: 100,
         height: 100,
+        // height: 100,
         borderWidth: 10,
         borderColor: 'white',
-        backgroundColor: '#F0A23B'
+        backgroundColor: '#F0A23B',
+        // alignSelf: 'center'
+        left: 100
     },
     cajaAzul: {
+        // flex: 4,
+        // width: "100%",
+        // alignSelf: 'center',
+        // alignSelf: 'flex-start',
         width: 100,
         height: 100,
+        // height: 100,
         borderWidth: 10,
         borderColor: 'white',
-        backgroundColor: '#28C4D9'
+        backgroundColor: '#28C4D9',
+
     }
 })
