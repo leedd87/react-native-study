@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Text, View, Button } from 'react-native'
 import { styles } from '../themes/appTheme'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
@@ -7,10 +7,17 @@ interface Props extends NativeStackScreenProps<any, any> { }
 
 export const Pagina2Screen = ({ navigation }: Props) => {
 
+    useEffect(() => {
+        navigation.setOptions({
+            title: 'Hola  Mundo',
+            headerBackTitle: ''
+        })
+    }, [])
+
 
     return (
         <View style={styles.globalMargin}>
-            <Text>
+            <Text style={styles.title}>
                 Pagina2Screen
             </Text>
             <Button
