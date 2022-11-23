@@ -17,7 +17,7 @@ export const Pagina1Screen = ({ navigation }: Props) => {
                 onPress={() => navigation.navigate('Pagina2Screen')}
             />
             <Text>Navegar con argumentos</Text>
-            <TouchableOpacity onPress={() => navigation.navigate('PersonaScreen')}>
+            <TouchableOpacity onPress={() => navigation.navigate('PersonaScreen', { id: 1, nombre: 'Pedro' })}>
                 <Text>Pedro</Text>
             </TouchableOpacity>
         </View>
