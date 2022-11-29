@@ -7,6 +7,7 @@ import { Tab2Screen } from '../screens/Tab2Screen';
 import { Tab3Screen } from '../screens/Tab3Screen';
 import { colores } from '../themes/appTheme';
 import { Pagina1Screen } from '../screens/Pagina1Screen';
+import { TopTabNavigator } from './TopTabNavigator';
 
 export const Tabs = () => {
     return Platform.OS === 'ios' ? <TabsIOS /> : <TabsAndroid />
@@ -39,7 +40,7 @@ const TabsAndroid = () => {
             })}
         >
             <BottomTabAndroid.Screen name="Tab1Screen" options={{ title: 'Tab1' }} component={Tab1Screen} />
-            <BottomTabAndroid.Screen name="Tab2Screen" options={{ title: 'Tab2' }} component={Tab2Screen} />
+            <BottomTabAndroid.Screen name="Tab2Screen" options={{ title: 'Tab2' }} component={TopTabNavigator} />
             <BottomTabAndroid.Screen name="Tab3Screen" options={{ title: 'Stack' }} component={Pagina1Screen} />
         </BottomTabAndroid.Navigator>
     );
@@ -65,7 +66,7 @@ const TabsIOS = () => {
 
         >
             <BottomTabIOS.Screen name="Tab1Screen" options={{ title: 'Tab1', tabBarIcon: (props) => <Text style={{ color: props.color }}>T1</Text> }} component={Tab1Screen} />
-            <BottomTabIOS.Screen name="Tab2Screen" options={{ title: 'Tab2' }} component={Tab2Screen} />
+            <BottomTabIOS.Screen name="Tab2Screen" options={{ title: 'Tab2' }} component={TopTabNavigator} />
             <BottomTabIOS.Screen name="Tab3Screen" options={{ title: 'Stack' }} component={Tab3Screen} />
         </BottomTabIOS.Navigator>
     );
