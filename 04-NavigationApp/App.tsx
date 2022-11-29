@@ -5,20 +5,22 @@ import { StackNavigator } from './src/navigator/StackNavigator';
 import MenuLateralBasico from './src/navigator/MenuLateralBasico';
 import MenuLateral from './src/navigator/MenuLateral';
 import { Tabs } from './src/navigator/Tabs';
+import { Provider as PaperProvider } from 'react-native-paper';
 
 
 
 const App = () => {
   return (
 
+    <PaperProvider>
+      <NavigationContainer>
+        {/* <StackNavigator /> */}
+        {/* <MenuLateralBasico /> */}
+        <MenuLateral />
 
-    <NavigationContainer>
-      {/* <StackNavigator /> */}
-      {/* <MenuLateralBasico /> */}
-      <MenuLateral />
-
-      {/* <Tabs /> */}
-    </NavigationContainer>
+        {/* <Tabs /> */}
+      </NavigationContainer>
+    </PaperProvider>
   )
 }
 

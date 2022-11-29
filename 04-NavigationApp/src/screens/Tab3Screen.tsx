@@ -4,7 +4,7 @@ import { Text, View } from 'react-native'
 
 export const Tab3Screen = () => {
     useEffect(() => {
-        console.log('Tabscreen1 effect')
+        console.log('Tabscreen3 effect')
     }, [])
 
     return (
