@@ -8,6 +8,7 @@ import { Tab3Screen } from '../screens/Tab3Screen';
 import { colores } from '../themes/appTheme';
 import { Pagina1Screen } from '../screens/Pagina1Screen';
 import { TopTabNavigator } from './TopTabNavigator';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export const Tabs = () => {
     return Platform.OS === 'ios' ? <TabsIOS /> : <TabsAndroid />
@@ -26,16 +27,16 @@ const TabsAndroid = () => {
                     let iconName: string = '';
                     switch (route.name) {
                         case 'Tab1Screen':
-                            iconName = 'T1'
+                            iconName = 'bandage-outline'
                             break;
                         case 'Tab2Screen':
-                            iconName = 'T2'
+                            iconName = 'basketball-outline'
                             break;
                         case 'Tab3Screen':
-                            iconName = 'St'
+                            iconName = 'leaf-outline'
                             break
                     }
-                    return <Text style={{ color }}> {iconName}</Text>
+                    return <Icon name={iconName} size={20} color={color} />
                 }
             })}
         >

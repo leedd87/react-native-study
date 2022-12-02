@@ -17,12 +17,17 @@ export const TopTabNavigator = () => {
         <Tab.Navigator
             style={{ paddingTop: top }}
             sceneContainerStyle={{ backgroundColor: 'white' }}
+
             screenOptions={({ route }) => ({
                 tabBarPressColor: colores.primary,
                 tabBarShowIcon: true,
                 tabBarIndicatorStyle: {
                     backgroundColor: colores.primary,
+                    borderTopColor: colores.primary,
+                    borderTopWidth: 0,
+                    elevation: 0
                 },
+
                 tabBarIcon: ({ color }) => {
                     let iconName: string = '';
                     switch (route.name) {
