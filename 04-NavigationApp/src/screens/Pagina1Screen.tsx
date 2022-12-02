@@ -3,7 +3,7 @@ import { Button, Text, View, TouchableOpacity } from 'react-native'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { styles } from '../themes/appTheme'
 import { DrawerNavigationOptions, DrawerNavigationProp } from '@react-navigation/drawer'
-
+import Icon from 'react-native-vector-icons/Ionicons';
 interface Props extends NativeStackScreenProps<any, any> {
 }
 
@@ -35,10 +35,12 @@ export const Pagina1Screen = ({ navigation }: Props) => {
             <View style={{ flexDirection: 'row' }}>
 
                 <TouchableOpacity style={{ ...styles.botonGrande, backgroundColor: '#5856D6' }} onPress={() => navigation.navigate('PersonaScreen', { id: 1, nombre: 'Pedro' })}>
+                    <Icon name='body-outline' size={30} color='white' />
                     <Text style={styles.botonGrandeTexto}>Pedro</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={{ ...styles.botonGrande, backgroundColor: '#FF9427' }} onPress={() => navigation.navigate('PersonaScreen', { id: 2, nombre: 'Maria' })}>
+                    <Icon name='woman-outline' size={30} color='white' />
                     <Text style={styles.botonGrandeTexto}>Maria</Text>
                 </TouchableOpacity>
             </View>
