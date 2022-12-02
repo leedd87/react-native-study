@@ -5,6 +5,7 @@ import { ContactsScreen } from '../screens/ContactsScreen';
 import { AlbumsScreen } from '../screens/AlbumsScreen';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { colores } from '../themes/appTheme';
+import { Text } from 'react-native'
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -17,8 +18,30 @@ export const TopTabNavigator = () => {
             style={{ paddingTop: top }}
             sceneContainerStyle={{ backgroundColor: 'white' }}
             screenOptions={({ route }) => ({
-                tabBarPressColor: colores.primary
-            })}
+                tabBarPressColor: colores.primary,
+                tabBarShowIcon: true,
+                tabBarIndicatorStyle: {
+                    backgroundColor: colores.primary,
+                },
+                tabBarIcon: ({ color }) => {
+                    let iconName: string = '';
+                    switch (route.name) {
+                        case 'Chat':
+                            iconName = 'Ch';
+                            break;
+
+                        case 'Contacts':
+                            iconName = 'Co';
+                            break;
+
+                        case 'Albums':
+                            iconName = 'Al';
+                            break;
+                    }
+                    return <Text style={{ color }}>{iconName}</Text>;
+                },
+            }
+            )}
         >
             <Tab.Screen name="ChatScreen" component={ChatScreen} />
             <Tab.Screen name="ContactsScreen" component={ContactsScreen} />
