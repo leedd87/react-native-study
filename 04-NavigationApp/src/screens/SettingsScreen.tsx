@@ -1,7 +1,10 @@
 import React, { useContext } from 'react'
 import { Text, View } from 'react-native'
+
 import { AuthContext } from '../context/AutContext'
-import { styles } from '../themes/appTheme'
+
+import Icon from 'react-native-vector-icons/Ionicons';
+import { colores, styles } from '../themes/appTheme'
 
 export const SettingsScreen = () => {
 
@@ -17,6 +20,11 @@ export const SettingsScreen = () => {
             <Text>
                 {JSON.stringify(authState, null, 4)}
             </Text>
+            {authState.favoriteIcon && <Icon
+                name={authState.favoriteIcon}
+                size={150}
+                color={colores.primary} />}
+
         </View>
     )
 }
